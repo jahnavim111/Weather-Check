@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Check</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%if(locals.content){ %>
+    <div class="area">
+      <form action="#" method="post" id="locationForm">
+        <button type="submit">📍</button>
+      </form>
+      <h1>Current weather for <%= content['name'] %></h1>
+    </div>
+    <div class="container">
+      <div class="weather">
+        <div class="date-time">
+          <h1 class="time"><%= content['time'] %></h1>
+          <p><%= content['date'] %></p>
+        </div>
+        <div class="img-temp-desc">
+          <img
+            src="/images/animated/<%= content['icon'] %>"
+            alt="weather-icon"
+          />
+          <div class="temp-description">
+            <div class="temp"><p><h1><%= content['temp'] %></h1>℃</p></div>
+            <p><%= content['description']%></p>
+          </div>
+        </div>
+      </div>
+      <div class="message"><p><%= content['message'] %></p></div>
+      <div class="sub-container">
+        <div class="sun">
+          <p><%= content['sunriseTime'] %> 🌥️</p>
+          <p><%= content['sunsetTime'] %> 🌙</p>
+        </div>
+        <div class="other-data">
+          <div class="each-item">
+          <p><% if(content['feels_like'] > 30) {%>🥵<% } else if(content['feels_like'] < 20) {%>🥶<% } else{%>🙂<% } %>Feels Like</p><p class="align"><%= content['feels_like'] %>℃</p>
+          </div>
+          <div class="each-item"><p>💧Humidity</p><p class="align"><%= content['humidity'] %>%</p></div>
+          <div class="each-item"><p>💭Cloudiness</p><p class="align"><%= content['cloudiness'] %>%</p></div>
+          <div class="each-item"><p>😶‍🌫Air Quality</p><p class="align"><% if(content['aqi'] === 1) {%>Good<% } else if(content['aqi'] === 2 ) {%>Fair<% } else if( content['aqi'] === 3){%>Ok<% } else if( content['aqi'] === 4) {%>Poor<% }else{ %>Bad<% } %></p></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="form">
+      <form method="post" action="/location">
+        <input type="search" name="location" placeholder="Enter location" autocomplete="off">
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+    <% } else{ %>
+      <div class="choice">
+        <form action="#" method="post" id="locationForm">
+          <button type="submit">📍 Your Location</button>
+        </form>
+        <img
+            src="/images/animated/weather.svg"
+            alt="weather-icon"
+          />
+        <form action="/location" method="post">
+          <label for="location">🤔</label>
+          <input type="search" id="location" name="location" placeholder="Choose Location" autocomplete="off">
+        </form>
+      </div>
+    <% } %>
+    <% if(locals.errorMessage){ %>
+      <p class="error"><%= errorMessage %></p>
+    <% } %>
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>

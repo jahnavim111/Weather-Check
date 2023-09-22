@@ -1,0 +1,237 @@
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+  
+
+body {
+    background-image: url('');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+.choice{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice button{
+    background-color: #4682B4;
+    font-size: 1rem;
+    color: white;
+    border-radius: 10px;
+    padding: 10 20 10 20;
+    border-style: none;
+}
+
+.choice input{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 10px;
+    
+}
+
+.error{
+    color: red;
+    margin-top: 10px;
+    font-size: small;
+}
+
+.container {
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #add8e6;
+    color: #555;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px); /* Apply blur to the background */
+    width: auto;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.05); /* Enlarge the container on hover */
+}
+
+.date-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.img-temp-desc{
+    display: flex;
+}
+  
+.area{
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
+
+.weather{
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather img{
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.temp-description{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+} 
+
+.temp{
+    display: flex;
+}
+ 
+.message p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: x-large;
+    font-weight: 100;
+}
+
+.sub-container{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+
+.sun{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background-color: #4682B4;
+    height: 150px;
+    width: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    font-size: x-large;
+}
+
+.other-data{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 150px;
+    width: 150px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    background-color: #4682B4;
+    color: white;
+}
+
+.each-item{
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.align{
+    padding-top: 4px;
+}
+
+.form{
+    display: flex;
+    flex-wrap: nowrap;
+}
+   
+.form input[type="search"]{
+    width: 25rem;
+    height: 2rem;
+    border-radius: 10px;
+
+}
+
+button{
+    height: 2rem;
+    border-radius: 50%;
+    border-color: white;
+}
+
+  
+@media (max-width: 600px){
+	/*CSS for screens below or equal to 600px wide*/
+    
+    
+    .sub-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .form input[type="search"]{
+        width: 17rem;
+        height: 2rem;
+        border-radius: 10px;
+    
+    }
+    
+    .area h1{
+        font-size: medium;
+    }
+
+    .date-time h1{
+        font-size: large;
+    }
+
+    .date-time p{
+        font-size: small;
+    }
+
+    .area button{
+        font-size: small;
+        height: 1.5rem;
+        border-radius: 50%;
+        border-color: white;
+    }
+
+    .img-temp-desc img{
+        height: 60px;
+        width: 60px;
+    }
+
+    .temp-description h1{
+        font-size: large;
+    }
+
+    .temp-description p{
+        font-size: small;
+    }
+
+    .message p{
+        font-size: medium;
+    }
+    
+}
