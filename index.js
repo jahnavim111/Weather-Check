@@ -185,8 +185,14 @@ const handleLocationRoute = async(req,res)=>{
         console.log("Headers already sent. Response cannot be sent again.");
     }
     }catch(error){
-        console.log("Error");
+        weatherData = null;
         console.log(error);
+        // Send an error response back to the client
+        if (!res.headersSent) {
+            return res.redirect("/");
+        } else {
+            console.log("Headers already sent. Response cannot be sent again.");
+        }
         
     }
 }
